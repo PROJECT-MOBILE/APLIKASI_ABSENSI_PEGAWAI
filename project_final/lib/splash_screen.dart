@@ -10,7 +10,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -18,9 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) => const LoginPage(),
-        ),
+        MaterialPageRoute(builder: (context) => const LoginPage()),
       );
     });
   }
@@ -34,7 +31,6 @@ class _SplashScreenState extends State<SplashScreen> {
         color: const Color(0xFF114DB8),
         child: Stack(
           children: [
-
             // Ornamen kiri atas
             Positioned(
               top: -40,
@@ -96,7 +92,6 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: const [
-
                   CircleAvatar(
                     radius: 45,
                     backgroundColor: Colors.white,
@@ -123,17 +118,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
                   Text(
                     "Sistem Absensi Mahasiswa",
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 14,
-                    ),
+                    style: TextStyle(color: Colors.white70, fontSize: 14),
                   ),
 
                   SizedBox(height: 30),
 
-                  CircularProgressIndicator(
-                    color: Colors.white,
-                  ),
+                  CircularProgressIndicator(color: Colors.white),
                 ],
               ),
             ),

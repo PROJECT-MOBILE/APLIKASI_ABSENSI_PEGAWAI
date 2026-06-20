@@ -20,10 +20,7 @@ class _ProfilPageState extends State<ProfilPage> {
 
               const Text(
                 'Menu Profil',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
 
               const Divider(),
@@ -53,37 +50,23 @@ class _ProfilPageState extends State<ProfilPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Profil"),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text("Profil"), centerTitle: true),
       body: Column(
         children: [
           const SizedBox(height: 30),
 
-          const CircleAvatar(
-            radius: 50,
-            child: Icon(
-              Icons.person,
-              size: 60,
-            ),
-          ),
+          const CircleAvatar(radius: 50, child: Icon(Icons.person, size: 60)),
 
           const SizedBox(height: 10),
 
           const Text(
             "Siva",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
 
           const Text(
             "Staff Administrasi",
-            style: TextStyle(
-              color: Colors.grey,
-            ),
+            style: TextStyle(color: Colors.grey),
           ),
 
           const SizedBox(height: 20),
@@ -120,4 +103,3 @@ class _ProfilPageState extends State<ProfilPage> {
     );
   }
 }
-

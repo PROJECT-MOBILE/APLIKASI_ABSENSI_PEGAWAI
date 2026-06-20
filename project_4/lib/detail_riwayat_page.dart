@@ -1,192 +1,101 @@
 import 'package:flutter/material.dart';
 
-class DetailRiwayatPage extends StatefulWidget {
-  const DetailRiwayatPage({super.key});
+class ProfilPage extends StatefulWidget {
+  const ProfilPage({super.key});
 
   @override
-  State<DetailRiwayatPage> createState() => _DetailRiwayatPageState();
+  State<ProfilPage> createState() => _ProfilPageState();
 }
 
-class _DetailRiwayatPageState extends State<DetailRiwayatPage> {
-  String selectedBulan = "Bulan Ini";
+class _ProfilPageState extends State<ProfilPage> {
+  void tampilkanBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return SizedBox(
+          height: 220,
+          child: Column(
+            children: [
+              const SizedBox(height: 20),
 
-  // ✅ RADIO
-  String statusAbsen = "Hadir";
+              const Text(
+                'Menu Profil',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
 
-  // ✅ CHECKBOX
-  bool konfirmasi = false;
+              const Divider(),
 
-  // ✅ CHIP
-  List<String> kategori = ["Tepat Waktu", "Terlambat"];
-  String selectedKategori = "Tepat Waktu";
+              ListTile(
+                leading: const Icon(Icons.edit),
+                title: const Text('Edit Profil'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+
+              ListTile(
+                leading: const Icon(Icons.logout),
+                title: const Text('Logout'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("Profil"), centerTitle: true),
       body: Column(
         children: [
-          // HEADER
-          Container(
-            height: 120,
-            alignment: Alignment.center,
-            child: const Text(
-              "Detail Riwayat",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          const SizedBox(height: 30),
+
+          const CircleAvatar(radius: 50, child: Icon(Icons.person, size: 60)),
+
+          const SizedBox(height: 10),
+
+          const Text(
+            "Siva",
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+
+          const Text(
+            "Staff Administrasi",
+            style: TextStyle(color: Colors.grey),
+          ),
+
+          const SizedBox(height: 20),
+
+          Card(
+            margin: const EdgeInsets.all(10),
+            child: ListTile(
+              leading: const Icon(Icons.badge),
+              title: const Text("ID Pegawai"),
+              subtitle: const Text("PGW001"),
             ),
           ),
 
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: ListView(
-                children: [
-                  // DROPDOWN
-                  DropdownButtonFormField(
-                    value: selectedBulan,
-                    items: const [
-                      DropdownMenuItem(
-                        value: "Bulan Ini",
-                        child: Text("Bulan Ini"),
-                      ),
-                      DropdownMenuItem(
-                        value: "Bulan Lalu",
-                        child: Text("Bulan Lalu"),
-                      ),
-                    ],
-                    onChanged: (value) {
-                      setState(() {
-                        selectedBulan = value.toString();
-                      });
-                    },
-                    decoration:
-                        const InputDecoration(border: OutlineInputBorder()),
-                  ),
+          Card(
+            margin: const EdgeInsets.symmetric(horizontal: 10),
+            child: ListTile(
+              leading: const Icon(Icons.email),
+              title: const Text("Email"),
+              subtitle: const Text("siva@gmail.com"),
+            ),
+          ),
 
-                  const SizedBox(height: 15),
+          const Spacer(),
 
-                  const Text("27 Maret 2026"),
-                  const Divider(),
-
-                  // JAM
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Jam Masuk"),
-                      Text("08:01"),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Jam Keluar"),
-                      Text("17:00"),
-                    ],
-                  ),
-
-                  const SizedBox(height: 15),
-
-                  // ✅ RADIO BUTTON
-                  const Text("Status Absen"),
-                  Row(
-                    children: [
-                      Radio(
-                        value: "Hadir",
-                        groupValue: statusAbsen,
-                        onChanged: (value) {
-                          setState(() {
-                            statusAbsen = value.toString();
-                          });
-                        },
-                      ),
-                      const Text("Hadir"),
-
-                      Radio(
-                        value: "Izin",
-                        groupValue: statusAbsen,
-                        onChanged: (value) {
-                          setState(() {
-                            statusAbsen = value.toString();
-                          });
-                        },
-                      ),
-                      const Text("Izin"),
-                    ],
-                  ),
-
-                  const SizedBox(height: 15),
-
-                  // ✅ CHIP
-                  const Text("Kategori"),
-                  Wrap(
-                    spacing: 10,
-                    children: kategori.map((item) {
-                      return ChoiceChip(
-                        label: Text(item),
-                        selected: selectedKategori == item,
-                        onSelected: (_) {
-                          setState(() {
-                            selectedKategori = item;
-                          });
-                        },
-                      );
-                    }).toList(),
-                  ),
-
-                  const SizedBox(height: 20),
-
-                  // FOTO
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Column(
-                        children: [
-                          Container(
-                            width: 80,
-                            height: 80,
-                            color: Colors.grey[300],
-                          ),
-                          const SizedBox(height: 5),
-                          const Text("Foto Masuk"),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Container(
-                            width: 80,
-                            height: 80,
-                            color: Colors.grey[300],
-                          ),
-                          const SizedBox(height: 5),
-                          const Text("Foto Keluar"),
-                        ],
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 20),
-
-                  const Text("Lokasi"),
-                  const Text("Kantor Bapenda Sumut"),
-
-                  const SizedBox(height: 20),
-
-                  // ✅ CHECKBOX
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: konfirmasi,
-                        onChanged: (value) {
-                          setState(() {
-                            konfirmasi = value!;
-                          });
-                        },
-                      ),
-                      const Text("Konfirmasi data sudah benar"),
-                    ],
-                  ),
-                ],
-              ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: ElevatedButton(
+              onPressed: tampilkanBottomSheet,
+              child: const Text("Buka Menu"),
             ),
           ),
         ],

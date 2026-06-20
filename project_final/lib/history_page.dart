@@ -5,7 +5,6 @@ class HistoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final List<Map<String, String>> attendanceHistory = [
       {
         'tanggal': '01 Juni 2026',
@@ -44,9 +43,7 @@ class HistoryPage extends StatelessWidget {
         backgroundColor: const Color(0xFF114DB8),
         title: const Text(
           "Riwayat Absensi",
-          style: TextStyle(
-            color: Colors.white,
-          ),
+          style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
       ),
@@ -56,7 +53,6 @@ class HistoryPage extends StatelessWidget {
         itemCount: attendanceHistory.length,
 
         itemBuilder: (context, index) {
-
           final item = attendanceHistory[index];
 
           Color statusColor = Colors.green;
@@ -82,11 +78,9 @@ class HistoryPage extends StatelessWidget {
               padding: const EdgeInsets.all(15),
 
               child: Column(
-                crossAxisAlignment:
-                    CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
 
                 children: [
-
                   Text(
                     item['tanggal']!,
                     style: const TextStyle(
@@ -99,17 +93,11 @@ class HistoryPage extends StatelessWidget {
 
                   Row(
                     children: [
-
-                      const Icon(
-                        Icons.login,
-                        color: Colors.green,
-                      ),
+                      const Icon(Icons.login, color: Colors.green),
 
                       const SizedBox(width: 10),
 
-                      Text(
-                        "Masuk : ${item['masuk']}",
-                      ),
+                      Text("Masuk : ${item['masuk']}"),
                     ],
                   ),
 
@@ -117,17 +105,11 @@ class HistoryPage extends StatelessWidget {
 
                   Row(
                     children: [
-
-                      const Icon(
-                        Icons.logout,
-                        color: Colors.red,
-                      ),
+                      const Icon(Icons.logout, color: Colors.red),
 
                       const SizedBox(width: 10),
 
-                      Text(
-                        "Keluar : ${item['keluar']}",
-                      ),
+                      Text("Keluar : ${item['keluar']}"),
                     ],
                   ),
 
@@ -141,16 +123,14 @@ class HistoryPage extends StatelessWidget {
 
                     decoration: BoxDecoration(
                       color: statusColor,
-                      borderRadius:
-                          BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(20),
                     ),
 
                     child: Text(
                       item['status']!,
                       style: const TextStyle(
                         color: Colors.white,
-                        fontWeight:
-                            FontWeight.bold,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
