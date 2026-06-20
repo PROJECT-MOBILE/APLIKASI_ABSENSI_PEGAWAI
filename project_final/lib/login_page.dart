@@ -10,62 +10,42 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final TextEditingController usernameController = TextEditingController();
 
-  final TextEditingController usernameController =
-      TextEditingController();
-
-  final TextEditingController passwordController =
-      TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   void login() {
-
     String username = usernameController.text.trim();
     String password = passwordController.text.trim();
 
-    if (username == "DEDEK NURLINA" &&
-        password == "12345") {
-
+    if (username == "DEDEK NURLINA" && password == "12345") {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (_) => const HomePage(),
-        ),
+        MaterialPageRoute(builder: (_) => const HomePage()),
       );
-
     } else {
-
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            "Username atau Password Salah!",
-          ),
-        ),
+        const SnackBar(content: Text("Username atau Password Salah!")),
       );
-
     }
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
 
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             // HEADER BIRU
             Container(
               height: 280,
               width: double.infinity,
-              decoration: const BoxDecoration(
-                color: Color(0xFF114DB8),
-              ),
+              decoration: const BoxDecoration(color: Color(0xFF114DB8)),
 
               child: Stack(
                 children: [
-
                   Positioned(
                     top: -40,
                     left: -40,
@@ -94,10 +74,8 @@ class _LoginPageState extends State<LoginPage> {
 
                   const Center(
                     child: Column(
-                      mainAxisAlignment:
-                          MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-
                         CircleAvatar(
                           radius: 35,
                           backgroundColor: Colors.white,
@@ -123,10 +101,7 @@ class _LoginPageState extends State<LoginPage> {
 
                         Text(
                           "Welcome Back",
-                          style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 14,
-                          ),
+                          style: TextStyle(color: Colors.white70, fontSize: 14),
                         ),
                       ],
                     ),
@@ -141,43 +116,30 @@ class _LoginPageState extends State<LoginPage> {
               child: Container(
                 width: double.infinity,
 
-                margin: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                ),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
 
                 padding: const EdgeInsets.all(25),
 
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius:
-                      BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(30),
 
                   boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.shade300,
-                      blurRadius: 10,
-                    ),
+                    BoxShadow(color: Colors.grey.shade300, blurRadius: 10),
                   ],
                 ),
 
                 child: Column(
                   children: [
-
                     TextField(
-                      controller:
-                          usernameController,
+                      controller: usernameController,
 
-                      decoration:
-                          InputDecoration(
+                      decoration: InputDecoration(
                         labelText: "Username",
-                        prefixIcon:
-                            const Icon(Icons.person),
+                        prefixIcon: const Icon(Icons.person),
 
-                        border:
-                            OutlineInputBorder(
-                          borderRadius:
-                              BorderRadius.circular(
-                                  10),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
@@ -185,22 +147,16 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 20),
 
                     TextField(
-                      controller:
-                          passwordController,
+                      controller: passwordController,
 
                       obscureText: true,
 
-                      decoration:
-                          InputDecoration(
+                      decoration: InputDecoration(
                         labelText: "Password",
-                        prefixIcon:
-                            const Icon(Icons.lock),
+                        prefixIcon: const Icon(Icons.lock),
 
-                        border:
-                            OutlineInputBorder(
-                          borderRadius:
-                              BorderRadius.circular(
-                                  10),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
@@ -208,15 +164,12 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 10),
 
                     Align(
-                      alignment:
-                          Alignment.centerRight,
+                      alignment: Alignment.centerRight,
 
                       child: TextButton(
                         onPressed: () {},
 
-                        child: const Text(
-                          "Forgot Password?",
-                        ),
+                        child: const Text("Forgot Password?"),
                       ),
                     ),
 
@@ -227,17 +180,11 @@ class _LoginPageState extends State<LoginPage> {
                       height: 50,
 
                       child: ElevatedButton(
-                        style:
-                            ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color(
-                                  0xFF114DB8),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF114DB8),
 
-                          shape:
-                              RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(
-                                    10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
                           ),
                         ),
 
@@ -247,8 +194,7 @@ class _LoginPageState extends State<LoginPage> {
                           "LOGIN",
                           style: TextStyle(
                             color: Colors.white,
-                            fontWeight:
-                                FontWeight.bold,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
@@ -257,35 +203,27 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 20),
 
                     Row(
-                      mainAxisAlignment:
-                          MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
 
                       children: [
-
-                        const Text(
-                          "Belum punya akun? ",
-                        ),
+                        const Text("Belum punya akun? "),
 
                         GestureDetector(
                           onTap: () {
-
                             Navigator.push(
                               context,
 
                               MaterialPageRoute(
-                                builder: (_) =>
-                                    const RegisterPage(),
+                                builder: (_) => const RegisterPage(),
                               ),
                             );
-
                           },
 
                           child: const Text(
                             "Daftar",
                             style: TextStyle(
                               color: Colors.blue,
-                              fontWeight:
-                                  FontWeight.bold,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
