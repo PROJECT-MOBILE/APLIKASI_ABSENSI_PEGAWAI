@@ -137,7 +137,7 @@ class AboutUsPage extends StatelessWidget {
             ),
 
             memberLeft(
-              image: "dedek3.jpeg",
+              image: "ciciii.jpg",
               name: "Cici Melisma",
               role: "Frontend Developer",
               description:
