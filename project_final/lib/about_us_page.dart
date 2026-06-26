@@ -111,8 +111,8 @@ class AboutUsPage extends StatelessWidget {
             const SizedBox(height: 10),
 
             const Text(
-              "Kami adalah kelompok pengembang aplikasi Absensi Mahasiswa berbasis Flutter. "
-              "Aplikasi ini dibuat sebagai implementasi mata kuliah Mobile Programming.",
+              "Kami adalah kelompok pengembang aplikasi Absensi Pegawai berbasis Flutter. "
+              "Aplikasi ini dibuat sebagai implementasi mata kuliah Pemrograman Mobile.",
               textAlign: TextAlign.center,
             ),
 
