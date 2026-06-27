@@ -111,8 +111,7 @@ class AboutUsPage extends StatelessWidget {
             const SizedBox(height: 10),
 
             const Text(
-              "Kami adalah kelompok pengembang aplikasi Absensi Pegawai berbasis Flutter. "
-              "Aplikasi ini dibuat sebagai implementasi mata kuliah Pemrograman Mobile.",
+              "Kami merupakan tim pengembang aplikasi Absensi Pegawai berbasis Flutter yang bekerja sama dalam merancang, mengembangkan, dan mengimplementasikan aplikasi sebagai bentuk penerapan ilmu pada mata kuliah Pemrograman Mobile. Aplikasi ini dibuat untuk memberikan solusi digital dalam pengelolaan absensi pegawai dengan mengutamakan kemudahan penggunaan, keakuratan data, serta efisiensi proses pencatatan kehadiran.",
               textAlign: TextAlign.center,
             ),
 
@@ -128,8 +127,8 @@ class AboutUsPage extends StatelessWidget {
             ),
 
             memberRight(
-              image: "assets/dedek3.jpeg",
-              name: "Dedek Nurlina",
+              image: "assets/yudhis.jpg",
+              name: "Yudhis Agil Raspati",
               role: "UI/UX Designer",
               description:
                   "Merancang tampilan aplikasi, membuat desain antarmuka, "
@@ -146,8 +145,8 @@ class AboutUsPage extends StatelessWidget {
             ),
 
             memberRight(
-              image: "assets/yudhis.jpg",
-              name: "Yudhis Agil Raspati",
+              image: "assets/dedek3.jpeg",
+              name: "Dedek Nurlina",
               role: "Backend & Database",
               description:
                   "Mengelola penyimpanan data, proses autentikasi, dan integrasi "

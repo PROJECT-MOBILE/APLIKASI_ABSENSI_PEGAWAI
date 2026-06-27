@@ -57,7 +57,7 @@ class ProfilePage extends StatelessWidget {
             Card(
               child: ListTile(
                 leading: const Icon(Icons.badge, color: Colors.green),
-                title: const Text("NIM"),
+                title: const Text("NIP"),
                 subtitle: const Text("0701233170"),
               ),
             ),
@@ -65,8 +65,8 @@ class ProfilePage extends StatelessWidget {
             Card(
               child: ListTile(
                 leading: const Icon(Icons.school, color: Colors.orange),
-                title: const Text("Program Studi"),
-                subtitle: const Text("Teknik Komputer"),
+                title: const Text("Bidang"),
+                subtitle: const Text("Keuangan"),
               ),
             ),
 

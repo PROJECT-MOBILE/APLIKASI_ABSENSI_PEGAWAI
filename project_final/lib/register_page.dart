@@ -10,7 +10,7 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController namaController = TextEditingController();
 
-  final TextEditingController nimController = TextEditingController();
+  final TextEditingController nipController = TextEditingController();
 
   final TextEditingController usernameController = TextEditingController();
 
@@ -18,7 +18,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   void register() {
     if (namaController.text.isEmpty ||
-        nimController.text.isEmpty ||
+        nipController.text.isEmpty ||
         usernameController.text.isEmpty ||
         passwordController.text.isEmpty) {
       ScaffoldMessenger.of(
@@ -149,9 +149,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(height: 15),
 
                     TextField(
-                      controller: nimController,
+                      controller: nipController,
                       decoration: InputDecoration(
-                        labelText: "NIM",
+                        labelText: "NIP",
                         prefixIcon: const Icon(Icons.badge),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
