@@ -154,7 +154,7 @@ class AboutUsPage extends StatelessWidget {
             ),
 
             memberLeft(
-              image: "dedek3.jpeg",
+              image: "assets/siva.jpeg",
               name: "Kurnia Essiva Sahel Silalahi",
               role: "Quality Assurance",
               description:
