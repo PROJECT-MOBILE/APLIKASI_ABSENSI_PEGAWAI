@@ -128,7 +128,7 @@ class AboutUsPage extends StatelessWidget {
             ),
 
             memberRight(
-              image: "dedek3.jpeg",
+              image: "assets/dedek3.jpeg",
               name: "Dedek Nurlina",
               role: "UI/UX Designer",
               description:
@@ -137,7 +137,7 @@ class AboutUsPage extends StatelessWidget {
             ),
 
             memberLeft(
-              image: "ciciii.jpg",
+              image: "assets/ciciii.jpg",
               name: "Cici Melisma",
               role: "Frontend Developer",
               description:
@@ -146,7 +146,7 @@ class AboutUsPage extends StatelessWidget {
             ),
 
             memberRight(
-              image: "dedek3.jpeg",
+              image: "assets/yudhis.jpg",
               name: "Yudhis Agil Raspati",
               role: "Backend & Database",
               description:
