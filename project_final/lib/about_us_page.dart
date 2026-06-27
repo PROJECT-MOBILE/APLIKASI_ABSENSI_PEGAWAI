@@ -119,7 +119,7 @@ class AboutUsPage extends StatelessWidget {
             const SizedBox(height: 30),
 
             memberLeft(
-              image: "dedek3.jpeg",
+              image: "assets/fiqih.jpeg",
               name: "Fiqih Syahputra",
               role: "Ketua Kelompok",
               description:
