@@ -167,7 +167,7 @@ class AboutUsPage extends StatelessWidget {
             const Divider(),
 
             const Text(
-              "© 2026 Kelompok Mobile Programming",
+              "© 2026 Kelompok Pemrograman Mobile",
               style: TextStyle(color: Colors.grey),
             ),
 
